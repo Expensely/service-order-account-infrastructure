@@ -7,7 +7,7 @@ resource "aws_ecr_repository" "api" {
     scan_on_push = false
   }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
   tags = local.default_tags
 }
@@ -41,7 +41,7 @@ resource "aws_ecr_repository" "migration" {
     scan_on_push = true
   }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
   tags = local.default_tags
 }
@@ -75,7 +75,7 @@ resource "aws_ecr_repository" "api_tests" {
     scan_on_push = true
   }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
   tags = local.default_tags
 }
